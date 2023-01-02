@@ -6,6 +6,18 @@ import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
 
+const UserSchema = {
+  name: 'User',
+  properties: {
+    _id: 'int',
+    name: 'string',
+    email: 'string',
+    password: 'string',
+  },
+  primaryKey: '_id',
+};
+
+
 const isAndroid = Platform.OS === 'android';
 
 interface IRegistration {
@@ -20,6 +32,8 @@ interface IRegistrationValidation {
   password: boolean;
   agreed: boolean;
 }
+
+
 
 const Register = () => {
   const {isDark} = useData();
